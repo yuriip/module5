@@ -9,12 +9,8 @@ public class MainMenu {
         int bound = InputController.inputDataInt("Введите верхнюю границу диапазона в котором будут генерироваться случайные числа\n");
         int n = InputController.inputDataInt("Введите размер массива, который будет заполнен случайными числами в диапазоне от -" + bound + " до " + bound + "\n");
         Math math = new Math();
-        int[] array = null;
-        array = math.createRandomArray(n, bound);
-        if (array == null) {
-            Exception e = new Exception();
-            throw e;
-        }
+        int[] array = math.createRandomArray(n, bound);
+
         int[] arrayCopy = array.clone();
 
         while (true) {
@@ -32,25 +28,22 @@ public class MainMenu {
             switch (str) {
                 case "1":
                     MathMenu.processFindMaxValue(arrayCopy);
-                    System.out.println();
                     break;
                 case "2":
                     MathMenu.processFindMinValue(arrayCopy);
-                    System.out.println();
                     break;
                 case "3":
                     MathMenu.processSortArray(arrayCopy);
-                    System.out.println();
                     break;
                 case "4":
                     MathMenu.processSortMergeArray(arrayCopy);
-                    System.out.println();
                     break;
                 case "0":
                     return;
                 default:
                     System.out.println("!!! Выбор не сделан, попробуйте еще раз !!!");
             }
+            System.out.println();
         }
     }
 }
