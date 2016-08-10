@@ -3,8 +3,10 @@ package ua.goit.java.menu;
 import ua.goit.java.controller.InputController;
 import ua.goit.java.math.Math;
 
+import java.io.IOException;
+
 public class MainMenu {
-    public static void processMenu() throws Exception {
+    public static void processMenu() throws IOException {
 
         int bound = InputController.inputDataInt("Введите верхнюю границу диапазона в котором будут генерироваться случайные числа\n");
         int n = InputController.inputDataInt("Введите размер массива, который будет заполнен случайными числами в диапазоне от -" + bound + " до " + bound + "\n");
